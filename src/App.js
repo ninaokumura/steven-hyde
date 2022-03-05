@@ -88,13 +88,18 @@ function App() {
             <button
               key={option.name}
               onClick={() => {
+                const computerOption = getRandomOption();
+                if (option.winsAgainst === computerOption) {
+                  setPlayerScore(playerScore + 1);
+                }
+                if (option.losesAgainst === computerOption) {
+                  setComputerScore(computerScore + 1);
+                }
                 setPlayerOption(option.name);
-                const random = getRandomOption();
-                console.log(random);
-                setComputerOption(random);
+                setComputerOption(computerOption);
               }}
             >
-              <img className='w-32' src={option.imageSrc} />
+              <img className='w-32' src={option.imageSrc} alt={option.name} />
             </button>
           ))}
         </div>
