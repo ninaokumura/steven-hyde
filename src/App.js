@@ -41,6 +41,12 @@ const options = [
   },
 ];
 
+function getRandomOption() {
+  const randomIndex = Math.ceil(Math.random() * options.length) - 1;
+  const randomOption = options[randomIndex];
+  return randomOption.name;
+}
+
 function App() {
   const [playerScore, setPlayerScore] = useState(0);
   const [computerScore, setComputerScore] = useState(0);
@@ -59,6 +65,7 @@ function App() {
       score: computerScore,
     },
   ];
+
   return (
     <div className='flex flex-col justify-center item-center min-h-screen'>
       <header className='grid place-items-center p-12'>
@@ -73,6 +80,22 @@ function App() {
               src={player.src}
               score={player.score}
             />
+          ))}
+        </div>
+
+        <div className='flex'>
+          {options.map(option => (
+            <button
+              key={option.name}
+              onClick={() => {
+                setPlayerOption(option.name);
+                const random = getRandomOption();
+                console.log(random);
+                setComputerOption(random);
+              }}
+            >
+              <img className='w-32' src={option.imageSrc} />
+            </button>
           ))}
         </div>
       </main>
