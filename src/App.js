@@ -8,9 +8,9 @@ import foot from './images/img--foot.svg';
 
 const initialState = {
   playerScore: 0,
-  playerOption: '',
+  playerOption: 'questionMark',
   computerScore: 0,
-  computerOption: '',
+  computerOption: 'questionMark',
 };
 
 const icons = {
@@ -48,10 +48,15 @@ function getRandomOption() {
 }
 
 function App() {
-  const [playerScore, setPlayerScore] = useState(0);
-  const [computerScore, setComputerScore] = useState(0);
-  const [playerOption, setPlayerOption] = useState('questionMark');
-  const [computerOption, setComputerOption] = useState('questionMark');
+  const [playerScore, setPlayerScore] = useState(initialState.playerScore);
+  const [computerScore, setComputerScore] = useState(
+    initialState.computerScore
+  );
+  const [playerOption, setPlayerOption] = useState(initialState.playerOption);
+  const [computerOption, setComputerOption] = useState(
+    initialState.computerOption
+  );
+  const [message, setMessage] = useState('');
 
   const playerCards = [
     {
@@ -68,10 +73,13 @@ function App() {
 
   return (
     <div className='flex flex-col justify-center item-center min-h-screen'>
-      <header className='grid place-items-center p-12'>
+      <header className='grid place-items-center p-6 gap-4'>
         <h1 className='font-sans text-4xl'>Jokenpo</h1>
+        <span className=''>Cockroach vs Foot vs Nuclear Bomb</span>
       </header>
       <main className='border flex-1 grid place-items-center'>
+        {message}
+
         <div className='flex gap-12'>
           {playerCards.map(player => (
             <Card
@@ -89,17 +97,25 @@ function App() {
               key={option.name}
               onClick={() => {
                 const computerOption = getRandomOption();
+                setPlayerOption(option.name);
+                setComputerOption(computerOption);
                 if (option.winsAgainst === computerOption) {
                   setPlayerScore(playerScore + 1);
+                  setMessage('You won!');
+                  return;
                 }
                 if (option.losesAgainst === computerOption) {
                   setComputerScore(computerScore + 1);
+                  setMessage('Computer won!');
+                  return;
                 }
-                setPlayerOption(option.name);
-                setComputerOption(computerOption);
               }}
             >
-              <img className='w-32' src={option.imageSrc} alt={option.name} />
+              <img
+                className='w-24 bg-gray-300 rounded-full m-2'
+                src={option.imageSrc}
+                alt={option.name}
+              />
             </button>
           ))}
         </div>
