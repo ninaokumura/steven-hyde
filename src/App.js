@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { FaHeart } from 'react-icons/fa';
 import './App.css';
 import Card from './components/Card';
 import questionMark from './images/question-mark.svg';
@@ -11,6 +12,7 @@ const initialState = {
   playerOption: 'questionMark',
   computerScore: 0,
   computerOption: 'questionMark',
+  message: '...',
 };
 
 const icons = {
@@ -56,7 +58,16 @@ function App() {
   const [computerOption, setComputerOption] = useState(
     initialState.computerOption
   );
-  const [message, setMessage] = useState('');
+  const [message, setMessage] = useState('...');
+
+  function resetGame() {
+    setPlayerScore(initialState.playerScore);
+    setComputerScore(initialState.computerScore);
+    setComputerOption(initialState.computerOption);
+    setPlayerOption(initialState.playerOption);
+    setMessage(initialState.message);
+    return;
+  }
 
   const playerCards = [
     {
@@ -78,8 +89,7 @@ function App() {
         <span className=''>Cockroach vs Foot vs Nuclear Bomb</span>
       </header>
       <main className='border flex-1 grid place-items-center'>
-        {message}
-
+        <div className='py-4 text-lg'>{message}</div>
         <div className='flex gap-12'>
           {playerCards.map(player => (
             <Card
@@ -91,7 +101,7 @@ function App() {
           ))}
         </div>
 
-        <div className='flex'>
+        <div className='flex '>
           {options.map(option => (
             <button
               key={option.name}
@@ -112,14 +122,26 @@ function App() {
               }}
             >
               <img
-                className='w-24 bg-gray-300 rounded-full m-2'
+                className='w-20 bg-gray-300 rounded-full m-2'
                 src={option.imageSrc}
                 alt={option.name}
               />
             </button>
           ))}
         </div>
+        <button
+          className='bg-gray-300 py-2 px-8 rounded text-xs hover:text-gray-300 hover:bg-black'
+          onClick={resetGame}
+        >
+          Play Again
+        </button>
       </main>
+
+      <footer className='grid place-items-center w-full p-6'>
+        <span className='text-[10px] flex gap-2'>
+          Made with {<FaHeart className='text-sm' />} in New Zealand
+        </span>
+      </footer>
     </div>
   );
 }

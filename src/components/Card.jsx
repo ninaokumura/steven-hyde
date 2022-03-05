@@ -2,11 +2,11 @@ import React from 'react';
 
 export default function Card(props) {
   return (
-    <div className='shadow-2xl p-8 w-[16rem] m-auto'>
+    <div className='shadow-2xl py-8 w-[230px] m-auto'>
       <div className='grid place-items-center gap-4'>
-        <span className='text-2xl'>{props.playerName}</span>
+        <span className='text-xl'>{props.playerName}</span>
         <div className='bg-gray-300 rounded-full'>
-          <img className='w-[16rem]' src={props.src} alt='options' />
+          <img className='w-[150px]' src={props.src} alt='options' />
         </div>
         <span>Score: {props.score}</span>
       </div>
