@@ -84,13 +84,15 @@ function App() {
 
   return (
     <div className='flex flex-col justify-center item-center min-h-screen'>
-      <header className='grid place-items-center p-6 gap-4'>
-        <h1 className='font-sans text-4xl'>Jokenpo</h1>
-        <span className=''>Cockroach vs Foot vs Nuclear Bomb</span>
+      <header className='grid text-center p-6 gap-4'>
+        <h1 className='font-sans text-2xl sm:text-4xl'>Jokenpo</h1>
+        <span className='text-sm sm:text-base'>
+          Cockroach vs Foot vs Nuclear Bomb
+        </span>
       </header>
       <main className='border flex-1 grid place-items-center'>
         <div className='py-4 text-lg'>{message}</div>
-        <div className='flex gap-12'>
+        <div className='sm:flex sm:gap-12 py-6'>
           {playerCards.map(player => (
             <Card
               key={player.playerName}
@@ -101,9 +103,10 @@ function App() {
           ))}
         </div>
 
-        <div className='flex '>
+        <div className='flex sm:gap-12 '>
           {options.map(option => (
             <button
+              className='hover:opacity-80 transition-opacity'
               key={option.name}
               onClick={() => {
                 const computerOption = getRandomOption();
@@ -119,6 +122,7 @@ function App() {
                   setMessage('Computer won!');
                   return;
                 }
+                setMessage('It is a draw!');
               }}
             >
               <img
@@ -129,12 +133,14 @@ function App() {
             </button>
           ))}
         </div>
-        <button
-          className='bg-gray-300 py-2 px-8 rounded text-xs hover:text-gray-300 hover:bg-black'
-          onClick={resetGame}
-        >
-          Play Again
-        </button>
+        <div className='py-4'>
+          <button
+            className='bg-gray-300 py-2 px-8 rounded text-xs hover:text-gray-300 hover:bg-black'
+            onClick={resetGame}
+          >
+            Play Again
+          </button>
+        </div>
       </main>
 
       <footer className='grid place-items-center w-full p-6'>
