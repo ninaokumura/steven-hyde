@@ -1,5 +1,7 @@
 # Jokenpo
 
+![jokepo](https://user-images.githubusercontent.com/79299205/156905022-a1e5d8a3-add0-4789-8869-7e3fee462a30.JPG)
+
 ## Hyde's Game - Cockroach vs. Foot vs. Atomic Bomb
 
 I am a big fan of the tv series called That '70s show and my inspiration to build this game came from one of the episodes. You can check the video below to see the instructions.🙂
