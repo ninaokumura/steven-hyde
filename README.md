@@ -4,7 +4,7 @@
 
 ## Hyde's Game - Cockroach vs. Foot vs. Atomic Bomb
 
-I am a big fan of the tv series called That '70s show and my inspiration to build this game came from one of the episodes. You can check the video below to see the instructions.🙂
+I am a big fan of the tv series That '70s show and my inspiration to build this game came from one of the episodes. You can check the [video] for instructions.🙂
 (https://www.youtube.com/watch?v=o3avZE7T0cg)
 
 ## Description
