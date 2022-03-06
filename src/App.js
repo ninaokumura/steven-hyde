@@ -92,7 +92,7 @@ function App() {
       </header>
       <main className='border flex-1 grid place-items-center'>
         <div className='py-4 text-lg'>{message}</div>
-        <div className='sm:flex sm:gap-12 py-6'>
+        <div className='flex gap-6 sm:gap-12 py-6'>
           {playerCards.map(player => (
             <Card
               key={player.playerName}
@@ -126,7 +126,7 @@ function App() {
               }}
             >
               <img
-                className='w-20 bg-gray-300 rounded-full m-2'
+                className='w-14 sm:w-20 bg-gray-300 rounded-full m-2'
                 src={option.imageSrc}
                 alt={option.name}
               />
@@ -135,7 +135,7 @@ function App() {
         </div>
         <div className='py-4'>
           <button
-            className='bg-gray-300 py-2 px-8 rounded text-xs hover:text-gray-300 hover:bg-black'
+            className='bg-gray-300 sm:py-2 sm:px-8 px-4 py-1 rounded text-[10px] sm:text-xs hover:text-gray-300 hover:bg-black'
             onClick={resetGame}
           >
             Play Again
