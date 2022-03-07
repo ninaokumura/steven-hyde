@@ -85,14 +85,14 @@ function App() {
   return (
     <div className='flex flex-col justify-center item-center min-h-screen'>
       <header className='grid text-center p-6 gap-4'>
-        <h1 className='font-sans text-2xl sm:text-4xl'>Jokenpo</h1>
+        <h1 className='font-sans text-xl sm:text-4xl'>Jokenpo</h1>
         <span className='text-sm sm:text-base'>
           Cockroach vs Foot vs Nuclear Bomb
         </span>
       </header>
       <main className='border flex-1 grid place-items-center'>
         <div className='py-4 text-lg'>{message}</div>
-        <div className='flex gap-6 sm:gap-12 py-6'>
+        <div className='flex gap-6 sm:gap-12 py-2'>
           {playerCards.map(player => (
             <Card
               key={player.playerName}
