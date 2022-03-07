@@ -135,7 +135,7 @@ function App() {
         </div>
         <div className='py-4'>
           <button
-            className='bg-gray-300 sm:py-2 sm:px-8 px-4 py-1 rounded text-[10px] sm:text-xs hover:text-gray-300 hover:bg-black'
+            className='bg-gray-300 sm:px-8 px-5 py-3 rounded-xl text-[10px] sm:text-xs hover:text-gray-300 hover:bg-black'
             onClick={resetGame}
           >
             Play Again
