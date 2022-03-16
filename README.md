@@ -1,6 +1,7 @@
 # Steven Hyde's Game
 
-![jokepo](https://user-images.githubusercontent.com/79299205/156905022-a1e5d8a3-add0-4789-8869-7e3fee462a30.JPG)
+![jokenpo](https://user-images.githubusercontent.com/79299205/158522600-57e0f063-fff5-48fe-b7c5-80807f9ea4c1.JPG)
+
 
 ## Cockroach vs. Foot vs. Atomic Bomb
 
