@@ -85,7 +85,7 @@ function App() {
   return (
     <div className='flex flex-col justify-center item-center min-h-screen'>
       <header className='grid text-center p-6 gap-4'>
-        <h1 className='font-sans text-xl sm:text-4xl'>Jokenpo</h1>
+        <h1 className='font-sans text-xl sm:text-4xl'>Steven Hyde's Game</h1>
         <span className='text-sm sm:text-base'>
           Cockroach vs Foot vs Nuclear Bomb
         </span>
