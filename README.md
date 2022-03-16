@@ -17,8 +17,8 @@ I am a big fan of the tv series That '70s show and my inspiration to build this 
 
 Cloning and installing dependencies
 
-- `git clone git@github.com:ninaokumura/jokenpo.git`
-- `cd jokenpo`
+- `git@github.com:ninaokumura/steven-hyde.git`
+- `cd steven-hyde`
 - `npm install`
 - `code .`
 
